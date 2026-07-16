@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d87ff">
+  <meta name="description" content="Super Pixel Plumber, un jeu de plateforme rétro original jouable dans le navigateur.">
+  <title>Super Pixel Plumber</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">JEU DE PLATEFORME RÉTRO</p>
+        <h1>Super Pixel Plumber</h1>
+      </div>
+      <button id="soundButton" class="icon-button" type="button" aria-label="Activer ou couper le son">🔊</button>
+    </header>
+
+    <section class="game-card" aria-label="Zone de jeu">
+      <div class="hud" aria-live="polite">
+        <span>Score <strong id="scoreValue">000000</strong></span>
+        <span>Pièces <strong id="coinValue">00</strong></span>
+        <span>Vies <strong id="lifeValue">3</strong></span>
+        <span>Temps <strong id="timeValue">180</strong></span>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="960" height="540" aria-label="Jeu Super Pixel Plumber"></canvas>
+
+        <div id="startOverlay" class="overlay visible">
+          <div class="panel">
+            <p class="badge">NIVEAU 1-1</p>
+            <h2>Récupère les pièces et atteins le drapeau !</h2>
+            <p>Évite les créatures ou saute dessus. Le chrono tourne.</p>
+            <button id="startButton" class="primary-button" type="button">Jouer</button>
+          </div>
+        </div>
+
+        <div id="resultOverlay" class="overlay">
+          <div class="panel">
+            <p id="resultBadge" class="badge">TERMINÉ</p>
+            <h2 id="resultTitle">Bien joué !</h2>
+            <p id="resultText">Tu as terminé le niveau.</p>
+            <button id="restartButton" class="primary-button" type="button">Rejouer</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="touch-controls" aria-label="Commandes tactiles">
+        <div class="touch-group">
+          <button class="touch-button" data-control="left" type="button" aria-label="Aller à gauche">◀</button>
+          <button class="touch-button" data-control="right" type="button" aria-label="Aller à droite">▶</button>
+        </div>
+        <button class="touch-button jump-button" data-control="jump" type="button" aria-label="Sauter">▲</button>
+      </div>
+    </section>
+
+    <section class="instructions">
+      <div><kbd>←</kbd><kbd>→</kbd> ou <kbd>A</kbd><kbd>D</kbd><span>Se déplacer</span></div>
+      <div><kbd>Espace</kbd> ou <kbd>↑</kbd><span>Sauter</span></div>
+      <div><kbd>P</kbd><span>Pause</span></div>
+    </section>
+
+    <p class="legal-note">Jeu original inspiré des classiques du platformer. Aucun sprite, son ou logo Nintendo n’est utilisé.</p>
+  </main>
+
+  <script src="game.js" defer></script>
+</body>
+</html>
